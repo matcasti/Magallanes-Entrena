@@ -1,4 +1,4 @@
-# # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Proyecto: Taller Magallanes Entrena
 # Organiza: Austral Fitness ®
@@ -9,7 +9,7 @@
 # que no cumplen con los requisitos y ajustar las variables al formato
 # que usaremos más adelante. 
 
-# # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Importamos los datos ----------------------------------------------------
 
@@ -169,6 +169,8 @@ magallanes <- data[
   -c("region","comuna","nombre","correo","publicidad","consentimiento")
   ]
 
+# Imputación de valores perdidos ------------------------------------------
+
 library(mice)           # Ahora imputaremos los valores perdidos usando
 impute <- mice(         # metodo de imputación por ecuaciones encadenadas
   data = magallanes,    # para lo que usaremos el paquete 'MICE'
@@ -180,6 +182,8 @@ impute <- mice(         # metodo de imputación por ecuaciones encadenadas
 magallanes <- 
   complete(impute) %>% 
   as.data.table()
+
+
 
 library(readr)          # Cargamos paquete para guardar los datos limpiados
 write_rds(              # Primero en formato RDS, que será el formato más
