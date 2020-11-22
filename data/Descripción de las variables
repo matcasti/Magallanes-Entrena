@@ -1,0 +1,119 @@
+Descripción de variables
+
+Variable	Ítem de evaluación
+
+f nombre	Nombre completo 
+
+c correo	Correo electrónico 
+
+f consentimiento	Estoy de acuerdo con participar en este proyecto.
+
+f publicidad	¿Desea recibir contenido exclusivo de Austral Fitness? 
+
+i edad	Edad (años)
+
+f sexo	Género 
+
+i telefono	Teléfono celular 
+dispositivo	¿Cuenta con dispositivo electrónico, con acceso a Internet?
+
+i spaq_1	Durante los últimos 7 días, ¿Cuántos días realizó usted actividades físicas VIGOROSAS como levantar objetos pesados, excavar, aeróbicos, o pedalear rápido en bicicleta?
+
+n spaq_2	¿Cuánto tiempo en total usualmente le tomó realizar actividades físicas VIGOROSAS en uno de esos días que las realizó?
+
+n met_vigoroso	"MET-minuto/semana VIGOROSO"
+
+i spaq_3	Durante los últimos 7 días, ¿Cuántos días hizo usted actividades físicas MODERADAS tal como cargar objetos livianos o pedalear en bicicleta a paso regular? No incluya caminatas.
+
+n spaq_4	Usualmente, ¿Cuánto tiempo dedica usted en uno de esos días haciendo actividades físicas MODERADAS?
+
+n met_moderado	"MET-minuto/semana MODERADO"
+
+i spaq_5	Durante los últimos 7 días, ¿Cuántos días CAMINÓ usted por al menos 10 minutos continuos?
+
+n spaq_6	Usualmente, ¿Cuánto tiempo gastó usted en uno de esos días CAMINANDO?
+
+n met_caminando	"MET-minuto/semana CAMINANDO"
+
+n met_total	"MET-minuto/semana TOTAL"
+
+i spaq_7	Durante los últimos 7 días, ¿Cuánto tiempo permaneció SENTADO(A) en un día en la semana?
+
+f actividad_fisica	Nivel de actividad física
+
+f region	¿En qué región de Chile te encuentras? 
+
+f comuna	Comuna de residencia
+ 
+f sf_1	En general, diría usted que su SALUD es:
+
+f sf_2	Comparando su salud con la de UN AÑO ATRÁS, en general ¿cómo diría usted que está su salud ahora?
+
+f sf_3	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Esfuerzos intensos; correr, levantar objetos pesados, o participación en deportes que requieren gran esfuerzo.]
+
+f sf_4	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Esfuerzos moderados; mover una mesa, barrer, usar la aspiradora, caminar más de 1 hora]
+
+f sf_5	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Levantar o acarrear bolsa de las compras ]
+
+f sf_6	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Subir varios pisos por las escaleras]
+
+f sf_7	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Subir un solo piso por la escalera ]
+
+f sf_8	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Agacharse, arrodillarse o inclinarse]
+
+f sf_9	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Caminar más de 10 cuadras (1 km)]
+
+f sf_10	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Caminar varias cuadras]
+
+f sf_11	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Caminar una sola cuadra]
+
+f sf_12	Las siguientes actividades son las que haría usted en un día normal. ¿Su estado de salud actual lo limita a realizar estas actividades? Si es así, ¿cuánto lo limita? Marque el círculo que corresponda. [Bañarse o vestirse ]
+
+f sf_13	Durante el ÚLTIMO MES, ¿ha tenido usted alguno de los siguientes problemas en su trabajo o en el desempeño de sus actividades diarias a causa de su salud física? [Redujo la cantidad de tiempo dedicada a su trabajo u otra actividad ]
+
+f sf_14	Durante el ÚLTIMO MES, ¿ha tenido usted alguno de los siguientes problemas en su trabajo o en el desempeño de sus actividades diarias a causa de su salud física? [Hizo menos de lo que le hubiera gustado hacer]
+
+f sf_15	Durante el ÚLTIMO MES, ¿ha tenido usted alguno de los siguientes problemas en su trabajo o en el desempeño de sus actividades diarias a causa de su salud física? [Estuvo limitado en su trabajo u otra actividad ]
+
+f sf_16	Durante el ÚLTIMO MES, ¿ha tenido usted alguno de los siguientes problemas en su trabajo o en el desempeño de sus actividades diarias a causa de su salud física? [Tuvo dificultad para realizar su trabajo u otra actividad]
+
+f sf_17	Durante el ÚLTIMO MES ¿ha tenido usted alguno de estos problemas en su trabajo o en el desempeño de sus actividades diarias como resultado de problemas emocionales (sentirse deprimido o con ansiedad)? [Ha reducido el tiempo dedicado a su trabajo u otra actividad]
+
+f sf_18	Durante el ÚLTIMO MES ¿ha tenido usted alguno de estos problemas en su trabajo o en el desempeño de sus actividades diarias como resultado de problemas emocionales (sentirse deprimido o con ansiedad)? [Ha realizado menos de lo que ha querido ]
+
+f sf_19	Durante el ÚLTIMO MES ¿ha tenido usted alguno de estos problemas en su trabajo o en el desempeño de sus actividades diarias como resultado de problemas emocionales (sentirse deprimido o con ansiedad)? [Hizo su trabajo u otra actividad con menos cuidado que el de siempre ]
+
+f sf_20	Durante el ÚLTIMO MES ¿en que medida su salud física o sus problemas emocionales han dificultado sus actividades sociales normales con la familia, amigos o su grupo social?
+
+f sf_21	¿Tuvo dolor en alguna parte del cuerpo en el ÚLTIMO MES?
+
+f sf_22	Durante el ÚLTIMO MES ¿hasta que punto el dolor ha interferido con sus tareas normales (incluido el trabajo dentro y fuera de casa)?
+
+f sf_23	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Se sintió muy animoso?]
+
+f sf_24	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Estuvo muy nervioso?]
+
+f sf_25	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Estuvo muy decaído que nada lo anima?]
+
+f sf_26	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Se sintió tranquilo y calmado?]
+
+f sf_27	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Se sintió con mucha energía?]
+
+f sf_28	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Se sintió desanimado y triste?]
+
+f sf_29	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Se sintió agotado?]
+
+f sf_30	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Se ha sentido una persona feliz?]
+
+f sf_31	Las siguientes preguntas se refieren a como se ha sentido usted durante el ÚLTIMO MES. Responda todas las preguntas con la respuesta que mejor indique su estado de ánimo. ¿CUÁNTO TIEMPO durante el último mes: [Se sintió cansado?]
+
+f sf_32	Durante el ÚLTIMO MES ¿cuánto de su tiempo su salud física o problemas emocionales han dificultado sus actividades sociales, por ejemplo, contactar a amigos o familiares? 
+
+f sf_33	Para usted, ¿qué tan cierto o falso son estas afirmaciones respecto a su salud? [Me
+enfermo con más facilidad que otras personas ]
+
+f sf_34	Para usted, ¿qué tan cierto o falso son estas afirmaciones respecto a su salud? [Estoy tan saludable como cualquier persona]
+
+f sf_35	Para usted, ¿qué tan cierto o falso son estas afirmaciones respecto a su salud? [Creo que mi salud va a empeorar ]
+
+f sf_36	Para usted, ¿qué tan cierto o falso son estas afirmaciones respecto a su salud? [Mi salud es excelente]
