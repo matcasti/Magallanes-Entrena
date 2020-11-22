@@ -1,7 +1,13 @@
 # # # # # # # # # # # # # # # # # # # #
 
 # Proyecto: Taller Magallanes Entrena
+# Organiza: Austral Fitness ®
 # Autor:    Matías Castillo Aguilar
+
+# La finalidad de este código es la de descargar los datos recopilados
+# desde los formularios de inscripción, eliminar a aquellas observaciones
+# que no cumplen con los requisitos y ajustar las variables al formato
+# que usaremos más adelante. 
 
 # # # # # # # # # # # # # # # # # # # #
 
@@ -14,7 +20,7 @@ httr::reset_config()            # Eliminamos el caché del DNS.
 gs4_auth()                      # Autenticamos los permisos para la
                                 # descarga de los datos.
 
-data_raw <- read_sheet(             # Descargamos los datos desde Google
+data_raw <- read_sheet(         # Descargamos los datos desde Google
   ss = "194XV6AK_1aOlDd2dDcxKWbTlzvrbJvn0Sy0nE_wyaUk",      # Sheets.
   sheet = "Datos para exportación")
 
@@ -143,13 +149,6 @@ data <- within(data, {
 str(data)    # Evaluamos nuevamente la estructura de 
              # los datos.
 
-library(mice)
-impute <- mice(
-  data = data, 
-  m = 1, 
-  maxit = 1, 
-  seed = 199318853)
-
 # Vemos cuantas personas tenemos de cada región.
 with(data,{ tab <- table(region)
             par(mar = c(5,23,4,3))
@@ -169,3 +168,26 @@ magallanes <- data[
   region == levels(region)[7], 
   -c("region","comuna","nombre","correo","publicidad","consentimiento")
   ]
+
+library(mice)           # Ahora imputaremos los valores perdidos usando
+impute <- mice(         # metodo de imputación por ecuaciones encadenadas
+  data = magallanes,    # para lo que usaremos el paquete 'MICE'
+  m = 1, 
+  maxit = 20, 
+  seed = 199318853)
+
+# Ahora reponemos el valor perdido imputado a los datos iniciales de magallanes
+magallanes <- 
+  complete(impute) %>% 
+  as.data.table()
+
+library(readr)          # Cargamos paquete para guardar los datos limpiados
+write_rds(              # Primero en formato RDS, que será el formato más
+  x = magallanes,       # cómodo para trabajar en R.
+  file = "data/magallanes.RDS",
+  compress = "none"
+)
+write_csv(              # Luego en formato CSV
+  x = magallanes,
+  file = "data/magallanes.csv"
+)
