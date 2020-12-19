@@ -7,7 +7,7 @@ sujetos
 sf-36
 ipaq
 unidad-de-análisis
-literature
+resultados
 methods
 applications
 example-one
