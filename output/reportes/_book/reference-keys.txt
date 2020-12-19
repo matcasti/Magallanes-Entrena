@@ -1,0 +1,15 @@
+tab:regiones
+tab:sf36-table
+fig:sexo-vs-actfisc
+introducción
+metodos
+sujetos
+sf-36
+ipaq
+unidad-de-análisis
+literature
+methods
+applications
+example-one
+example-two
+final-words

@@ -1,0 +1,63 @@
+```{r prep, include=FALSE}
+# Output from script objects
+load("~/Documents/R/WD/Magallanes-Entrena/output/output.RData")
+```
+
+# Material y métodos {#metodos}
+
+## Sujetos
+
+<p align="justify">Para el proyecto y su consecución, la implementación de formularios fue clave para la inscripción de los participantes, así como el seguimiento de los mismos. Del mismo modo, se les aplicó el cuestionario SF-36 para evaluar parámetros de salud y calidad de vida, en conjunto con un cuestionario de actividad física (i.e. IPAQ)</p>
+
+<p align="justify">De los sujetos evaluados (n = `r nrow(muestra)`), el `r round(nrow(magallanes)/nrow(muestra)*100)`% de quienes respondieron las encuestas fueron de la Región de Magallanes. Del total de la muestra, la proporción de cada región puede apreciarse en la Tabla \@ref(tab:regiones).</p>
+
+<caption>(\#tab:regiones) Proporción de personas por sexo en cada región.</caption>
+```{r regiones}
+tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región", sexo ~ "Sexo"))
+```
+
+## SF-36
+
+<p align="justify">El SF-36 Health Survey es una encuesta de salud diseñada por el Health Institute, New England Medical Center, de Boston Massachusetts, que a partir de 36 preguntas pretende medir ocho conceptos genéricos sobre la salud, esto es, conceptos que no son específicos de una patología, grupo de tratamiento o edad, detectando tanto estados positivos como negativos de la salud física y estado emocional.</p>
+
+<p align="justify">Los ocho conceptos de salud (dimensiones) determinados en este cuestionario se resumen en la tabla \@ref(tab:sf36-table)</p>
+
+```{r sf36-table}
+sf36 <- data.frame(
+  Dimensión = c("Función física",
+                "Rol físico",
+                "Dolor corporal",
+                "Salud general",
+                "Vitalidad",
+                "Función social",
+                "Rol emocional",
+                "Salud mental"),
+  Significado = c("Grado en el que la falta de salud limita las actividades físicas de la vida diraria, como el cuidado personal, caminar, subir escaleras, coger o transportar cargas, y realizar esfuerzos moderados e intensos.",
+                  "Grado en el que la falta de salud interfiere en el trabajo y otras actividades diarias, produciendo como consecuencia un rendimiento menor del deseado, o limitando el tipo de actividades que se puede realizar o la dificultad de las mismas.",
+                  "Medida de la intensidad del dolor padecido y su efecto en el trabajo habitual y en las actividades del hogar.",
+                  "Valoración personal del estado de salud, que incluye la situación actual y las perspectivas futuras y la resistencia a enfermar.",
+                  "Sentimiento de energía y vitalidad, frente al de cansancio y desánimo.",
+                  "Grado en el que los problemas físicos o emocionales derivados de la falta de salud interfieren en la vida social habitual.",
+                  "Grado en el que los problemas emocionales afectan al trabajo y otras actividades diarias, considerando la reducción del tiempo dedicado, disminución del rendimiento y del esmero en el trabajo",
+                  "Valoración de la salud mental general, considerando la depresión, ansiedad, autocontrol, y bienestar general.")
+)
+
+knitr::kable(x = sf36, caption = "Dominios evaluativos en el cuestionario SF-36.", booktabs = TRUE)
+
+```
+
+## IPAQ
+
+<p align="justify">La actividad física fue evaluada mediante el Cuestionario Internacional de Actividad Física (IPAQ), que es una herramienta de medición de uso común. Diseñado como un cuestionario estandarizado de autoinforme, el IPAQ puede proporcionar a los investigadores y profesionales una estimación de la actividad física y el comportamiento sedentario de los adultos de 15 a 69 años de edad, en una variedad de entornos socioeconómicos. Además, el IPAQ también es beneficioso para los investigadores que colaboran dentro de un mismo país o entre países en diferentes lugares. En la actualidad, el IPAQ se explora en relación con su capacidad para medir el comportamiento sedentario.</p>
+
+<p align="justify">Los parámetros de asociación entre categorías de actividad física y sexo no muestran una relación entre si, sin embargo, la proporción de mujeres es significativamente mayor en cada categoría de actividad física, lo que  puede ser evidenciado en la Figura \@ref(fig:sexo-vs-actfisc).</p>
+
+```{r sexo-vs-actfisc, fig.cap="Proporción de hombres y mujeres en cada nivel de actividad física en toda la muestra", fig.align='center',out.width="100%"}
+ggstatsplot::ggbarstats(data, sexo, actividad_fisica, bf.message = FALSE, sample.size.label = TRUE, results.subtitle = FALSE,
+xlab = "\nNivel de actividad física", legend.title = "Sexo", ggtheme = theme_pubr())
+```
+
+
+## Unidad de análisis
+
+<p align="justify">Para los análisis posteriores se considerará a los sujetos correspondientes a la Región de Magallanes, la unidad de análisis sobre la cual se realizarán estadísticos descriptivos, correlacionales y contrastes de hipótesis sobre parámetros de tendencia central.</p>
