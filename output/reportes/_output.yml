@@ -6,7 +6,6 @@ bookdown::gitbook:
         <li><a>Magallanes entrena</a></li>
       after: |
         <li><a href="https://www.australfitness.cl" target="blank">Austral Fitness ®</a></li>
-    download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
