@@ -119,7 +119,7 @@ table2 <- tbl_summary(data, missing = "no", by = actividad_fisica,
 
 library(ggstatsplot)
 plot1 <- ggplot(data, aes(x = sexo, y = sf.dolor_corporal, fill = sexo)) +
-  labs(x = "", y = "Función frente al dolor\n") +
+  labs(x = "", y = "Dolor físico\n") +
   stat_summary(geom = "bar", fun = "mean", alpha = 0.75) +
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
   theme_pubr()

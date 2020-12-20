@@ -4,28 +4,25 @@
 load(file = "~/Documents/R/WD/Magallanes-Entrena/output/output-magallanes.RData")
 ```
 
-## Sexo
+## Actividad física
 
 <p align="justify">De la muestra evaluada perteneciente a la Región de Magallanes (n = `r nrow(data)`), el 19.9% (n = 34) correspondió a hombres y el 80.1% (n = 137) a mujeres. La edad de los evaluados fue de 32 ± 9 años, sin diferencias entre hombres y mujeres (*t* ~*Welch*~ (45.6) = 0.11, *p* = 0.91, *d* ~*Cohen's*~ = 0.03; Tabla \@ref(tab:summary-sexo)).</p>
 <p align="justify">En parámetros de actividad física, pudimos evaluar la distribución de los índices de los equivalentes metabólicos (MET's) relacionados con el gasto energético y en consecuencia a la actividad física asociada, el cual fue obtenido de manera indirecta mediante el cuestionario IPAQ, en donde observamos una leve tendencia en los hombres a tener un mayor gasto energético total por semana (1,508 ± 2,162 MET's/semana) en comparación con las mujeres (1,141 ± 1,374 MET's/semana), sin embargo estas diferencias no fueron estadísticamente significativas (*t* ~*Welch*~ (39.9) = 0.94, *p* = 0.352, *d* ~*Cohen's*~ = 0.3). En relación a la clasificación de actividad física, el 53% de los sujetos fueron catalogados con un nivel bajo de actividad física, un 25% con un nivel medio y un 22% con un nivel alto (Tabla \@ref(tab:summary-sexo)), sumado a lo anterior se destaca que no hubo un patrón que indicara una asociación entre la clasificación de actividad física y el sexo (*X*^2^~*Pearson*~ (2) = 1.38, *p* = 0.502, *V* ~*Cramer's*~ = 0.09).</p>
 
-<caption>(\#tab:summary-sexo) Valores por variable de estudio para los grupos de cada nivel de la categoría sexo de la submuestra correspondiente a la región de Magallanes</caption>
+<caption>(\#tab:summary-sexo) Valores por variable de estudio para los grupos de cada nivel de la categoría sexo de la submuestra correspondiente a la Región de Magallanes</caption>
 ```{r}
 table1
 ```
 
-<p align="justify">  </p>
 
-## Actividad física
-
-<p align="justify"> ... </p>
-<p align="justify"> ... </p>
-
+<caption>(\#tab:summary-actfisc) Valores por variable de estudio para los grupos de cada nivel de la categoría actividad física de la submuestra correspondiente a la Región de Magallanes</caption>
 ```{r}
 table2
 ```
 
-<p align="justify"> ... </p>
+## Salud según SF-36
+
+<p align="justify">En relación a lo obtenido en el cuestionario SF-36, podemos destacar</p>
 <p align="justify"> ... </p>
 
 ```{r}

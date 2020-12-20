@@ -2,6 +2,7 @@ tab:regiones
 tab:sf36-table
 fig:sexo-vs-actfisc
 tab:summary-sexo
+tab:summary-actfisc
 introducción
 metodos
 sujetos
@@ -9,5 +10,5 @@ sf-36
 ipaq
 unidad-de-análisis
 resultados
-sexo
 actividad-física
+salud-según-sf-36
