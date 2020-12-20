@@ -1,6 +1,3 @@
-tab:regiones
-tab:sf36-table
-fig:sexo-vs-actfisc
 tab:summary-sexo
 introducción
 metodos
