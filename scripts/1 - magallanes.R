@@ -160,9 +160,9 @@ plot5 <- ggplot(data, aes(x = actividad_fisica, y = met_total,
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
   ggsignif::geom_signif(comparisons = list(
     c("Bajo","Moderado"),c("Moderado","Alto"),c("Bajo","Alto")),
-    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/20, 
+    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/16, 
     map_signif_level = function(p)sprintf("p = %.2g", p), 
-    margin_top = -1/1.75) +
+    margin_top = -1/2) +
   theme_pubr()
 plot5 <- set_palette(plot5, "grey") + theme(legend.position = "none")
 
@@ -173,9 +173,9 @@ plot6 <- ggplot(data, aes(x = actividad_fisica, y = sf.salud_general,
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
   ggsignif::geom_signif(comparisons = list(
     c("Bajo","Moderado"),c("Moderado","Alto"),c("Bajo","Alto")),
-    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/18, 
+    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/12, 
     map_signif_level = function(p)sprintf("p = %.2g", p), 
-    margin_top = -1/2.5) +
+    margin_top = -1/3) +
   theme_pubr()
 plot6 <- set_palette(plot6, "grey") + theme(legend.position = "none")
 
@@ -186,9 +186,9 @@ plot7 <- ggplot(data, aes(x = actividad_fisica, y = sf.rol_emocional,
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
   ggsignif::geom_signif(comparisons = list(
     c("Bajo","Moderado"),c("Moderado","Alto"),c("Bajo","Alto")),
-    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/14, 
+    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/10, 
     map_signif_level = function(p)sprintf("p = %.2g", p), 
-    margin_top = 0) +
+    margin_top = 1/10) +
   theme_pubr()
 plot7 <- set_palette(plot7, "grey") + theme(legend.position = "none")
 

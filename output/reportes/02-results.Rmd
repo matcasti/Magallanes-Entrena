@@ -8,7 +8,7 @@ load(file = "~/Documents/R/WD/Magallanes-Entrena/output/output-magallanes.RData"
 
 <p align="justify">De la muestra evaluada perteneciente a la Región de Magallanes (n = `r nrow(data)`), el 19.9% (n = 34) correspondió a hombres y el 80.1% (n = 137) a mujeres. La edad de los evaluados fue de 32 ± 9 años, sin diferencias entre hombres y mujeres $(t_{~Welch} (45.6) = 0.11,~p = 0.91, d_{~Cohen's} = 0.03)$.</p>
 
-```{r sf36-plots, fig.height=8 ,out.width="100%",fig.cap="Parámetros del SF-36 ajustados por sexo."}
+```{r sf36-plots, fig.width=10 ,out.width="100%",fig.cap="Parámetros del SF-36 ajustados por sexo."}
 plot.sexo
 ```
 
@@ -23,7 +23,7 @@ table1
 
 <p align="justify">En relación a lo obtenido en el cuestionario SF-36, podemos destacar el componente de dolor corporal, el cual representa una "*Medida de la intensidad del dolor padecido y su efecto en el trabajo habitual y en las actividades del hogar*" en el que las mujeres tuvieron una puntuación significativamente mayor en comparación a los hombres $(t_{~Welch} (62) = -3.31,~p = 0.002,~ d_{~Cohen's} = -0.84)$, sin embargo al ajustar por el nivel de actividad física no encontramos diferencias estadísticamente significativas entre los niveles de esta categoría $(F_{~Fisher}(2, 168) = 0.39,~p = 0.676,~\eta{}^2 = 0.005)$. En relación a la función social, evaluada dentro del SF-36, las mujeres puntuaron (38 ± 24) más que los hombres (22 ± 20), $t_{~Welch} (58.2) = -3.92,~p < 0.001,~d_{~Cohen's} = -1.03$, pero al igual que con el parámetro de dolor físico, al ajustar la función social según la condición física de los participantes no encontramos diferencias significativas entre los participantes $(F_{~Fisher}(2, 168) = 0.05,~p = 0.948,~\eta{}^2 = 0.001)$.</p>
 
-```{r sf36-plots2, fig.height=8, out.width="100%",fig.cap="Parámetros del SF-36 ajustados por nivel de actividad física."}
+```{r sf36-plots2, fig.width=10, fig.height=8, out.width="100%",fig.cap="Parámetros del SF-36 ajustados por nivel de actividad física."}
 plot.acfisica
 ```
 
