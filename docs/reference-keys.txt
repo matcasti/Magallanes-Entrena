@@ -10,6 +10,8 @@ metodos
 sujetos
 sf-36
 ipaq
+entrenamiento-computarizado
+talleres-de-nutrición
 análisis-estadístico
 resultados
 actividad-física

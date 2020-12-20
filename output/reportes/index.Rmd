@@ -40,10 +40,10 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 # Packages used in those scripts
-library(ggpubr);
-library(ggstatsplot);
-library(tidyverse);
-library(gtsummary);
-library(flexdashboard);
-library(data.table)
+library(ggpubr,warn.conflicts=F,quietly=T,verbose=F);
+library(ggstatsplot,warn.conflicts=F,quietly=T,verbose=F);
+library(tidyverse,warn.conflicts=F,quietly=T,verbose=F);
+library(gtsummary,warn.conflicts=F,quietly=T,verbose=F);
+library(flexdashboard,warn.conflicts=F,quietly=T,verbose=F);
+library(data.table,warn.conflicts=F,quietly=T,verbose=F)
 ```

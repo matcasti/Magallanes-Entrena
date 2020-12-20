@@ -57,9 +57,18 @@ ggstatsplot::ggbarstats(data, sexo, actividad_fisica, bf.message = FALSE, sample
 xlab = "\nNivel de actividad física", legend.title = "Sexo", ggtheme = theme_pubr())
 ```
 
+## Entrenamiento computarizado
+
+<p align="justify">El periodo de entrenamiento consistió en 4 clases computarizadas de acondicionamiento físico a la semana por un periodo de 12 semanas supervisado por un entrenador en cada clase, en el cual se realizaron ejercicios de musculación de intensidad moderada (i.e. OMNI-RES 5-6/10) en una estructura de entrenamiento tipo circuitos para inducir un aumento del gasto cardíaco en el ejercicio y la solicitación de sistemas energéticos aeróbicos y anaeróbicos lácticos.</p>
+
+## Talleres de nutrición
+
+<p align="justify">De forma complementaria se realizaron talleres de nutrición orientados a la adopción y mantenimiento de estilos de alimentación saludables junto con brindar estrategias nutricionales para favorecer su adherencia en combinación con programas de ejercicio físico. Éstas actividades fueron realizadas vía conferencia virtual al igual que los talleres de ejercicio.</p>
 
 ## Análisis estadístico
 
-<p align="justify">Para el análisis estadístico se considerará a los sujetos correspondientes a la Región de Magallanes como la unidad de análisis sobre la cual se realizarán estadísticos descriptivos, correlacionales y contrastes de hipótesis sobre parámetros de tendencia central.</p>
+<p align="justify">Para el análisis estadístico se consideraró a los sujetos correspondientes a la Región de Magallanes como la unidad de análisis sobre la cual se realizarán estadísticos descriptivos, correlacionales y contrastes de hipótesis sobre parámetros de tendencia central.</p>
 
-<p align="justify">El software de programación para la computación estadística R [@R-base] en su versión 4.0.2 fue utilizado para los análisis implementados en este reporte. Para la significación estadística se fijó un $\alpha$ igual al 5%. Para las pruebas de contraste de hipótesis de la tendencia central de los grupos a evaluar se utilizó la prueba t de Student con corrección de Welch para los grados de libertad, esto para considerar violaciones de la homocedasticidad en los contrastes de categorías con dos niveles y, análisis de varianza (ANOVA) de un factor para las comparaciones de categorías con 3 niveles o más sin corrección para heterocedasticidad ya que esta prueba cuenta con la robustez necesaria para tolerar pequeñas desviaciones de los supuestos de normalidad y homocedasticidad de la estadística paramétrica sin que exista un aumento considerable en la probabilidad de un error tipo I. Para las pruebas de asociación entre variables categóricas se utilizó la prueba $\chi{}^2$ de Pearson.</p>
+<p align="justify">El software de programación para la computación estadística R [@R-base] en su versión 4.0.2 fue utilizado para los análisis implementados en este reporte. Para la significación estadística se fijó un $\alpha$ igual al 5%. Para las pruebas de contraste de hipótesis de la tendencia central de los grupos a evaluar se utilizó la prueba $t$ de Student con corrección de Welch para los grados de libertad, esto para considerar violaciones de la homocedasticidad en los contrastes de categorías con dos niveles y, análisis de varianza (ANOVA) de un factor para las comparaciones de categorías con 3 niveles o más sin corrección para heterocedasticidad ya que esta prueba cuenta con la robustez necesaria para tolerar pequeñas desviaciones de los supuestos de normalidad y homocedasticidad de la estadística paramétrica sin que exista un aumento considerable en la probabilidad de un error tipo I. Para las pruebas de asociación entre variables categóricas se utilizó la prueba $\chi{}^2$ de Pearson.</p>
+
+<p align="justify">Como unidad de medida de tamaño de efecto (ES) se utilizó la $d$ de Cohen para las comparaciones de grupos mediante la prueba $t$ de Student; $\eta{}^2$ como ES para ANOVA y la $V$ de Cramer para la prueba de $\chi{}^2$ de Pearson.</p>
