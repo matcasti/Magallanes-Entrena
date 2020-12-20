@@ -45,5 +45,5 @@ library(ggstatsplot);
 library(tidyverse);
 library(gtsummary);
 library(flexdashboard);
-library(data.table);
+library(data.table)
 ```
