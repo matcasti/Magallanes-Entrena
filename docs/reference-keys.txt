@@ -9,3 +9,5 @@ sf-36
 ipaq
 unidad-de-análisis
 resultados
+sexo
+actividad-física
