@@ -11,7 +11,7 @@ load("~/Documents/R/WD/Magallanes-Entrena/output/output.RData")
 
 <p align="justify">De los sujetos evaluados (n = `r nrow(muestra)`), el `r round(nrow(magallanes)/nrow(muestra)*100)`% de quienes respondieron las encuestas fueron de la Región de Magallanes. Del total de la muestra, la proporción de cada región puede apreciarse en la Tabla \@ref(tab:regiones).</p>
 
-<caption>(\#tab:regiones) Proporción de personas por sexo en cada región.</caption>
+<caption>(\#tab:regiones) Proporción de personas por sexo en cada región.</caption>  
 ```{r regiones}
 tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región", sexo ~ "Sexo"))
 ```
@@ -58,6 +58,8 @@ xlab = "\nNivel de actividad física", legend.title = "Sexo", ggtheme = theme_pu
 ```
 
 
-## Unidad de análisis
+## Análisis estadístico
 
-<p align="justify">Para los análisis posteriores se considerará a los sujetos correspondientes a la Región de Magallanes, la unidad de análisis sobre la cual se realizarán estadísticos descriptivos, correlacionales y contrastes de hipótesis sobre parámetros de tendencia central.</p>
+<p align="justify">Para el análisis estadístico se considerará a los sujetos correspondientes a la Región de Magallanes como la unidad de análisis sobre la cual se realizarán estadísticos descriptivos, correlacionales y contrastes de hipótesis sobre parámetros de tendencia central.</p>
+
+<p align="justify">El software de programación para la computación estadística R [@R-base] en su versión 4.0.2 fue utilizado para los análisis implementados en este reporte. Para la significación estadística se fijó un $\alpha$ igual al 5%. Para las pruebas de contraste de hipótesis de la tendencia central de los grupos a evaluar se utilizó la prueba t de Student con corrección de Welch para los grados de libertad, esto para considerar violaciones de la homocedasticidad en los contrastes de categorías con dos niveles y, análisis de varianza (ANOVA) de un factor para las comparaciones de categorías con 3 niveles o más sin corrección para heterocedasticidad ya que esta prueba cuenta con la robustez necesaria para tolerar pequeñas desviaciones de los supuestos de normalidad y homocedasticidad de la estadística paramétrica sin que exista un aumento considerable en la probabilidad de un error tipo I. Para las pruebas de asociación entre variables categóricas se utilizó la prueba $\chi{}^2$ de Pearson.</p>

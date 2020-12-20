@@ -1,0 +1,32 @@
+with(data, {
+    test <- t.test(met_total ~ sexo, var.equal = F)
+    p <- janitor::round_half_up(test$parameter,1)
+    s <- janitor::round_half_up(test$statistic,2)
+    v <- janitor::round_half_up(test$p.value,3)
+    e <- effectsize::effectsize(test) %>% 
+        janitor::round_half_up(2)
+    cat("$(t_{~Welch} (",p,") = ",s,",~p = ",v,",~d_{~Cohen's} = ",e$d,")$",
+        sep = "")
+})
+
+with(data, {
+    test <- chisq.test(sexo, actividad_fisica)
+    p <- janitor::round_half_up(test$parameter,1)
+    s <- janitor::round_half_up(test$statistic,2)
+    v <- janitor::round_half_up(test$p.value,3)
+    e <- effectsize::effectsize(test) %>% 
+        janitor::round_half_up(2)
+    cat("$( chi^2_{~Pearson}(",p,") = ",s,",~p = ",v,",~V_{~Cramer's} = ",e$Cramers_v,")$",
+        sep = "")
+})
+
+with(data, {
+    test <- aov(sf.dolor_corporal ~ actividad_fisica)
+    anov <- anova(test)
+    p <- anov$Df 
+    s <- anov$`F value`[1] %>% janitor::round_half_up(2)
+    v <- anov$`Pr(>F)`[[1]] %>% janitor::round_half_up(3)
+    ef <- effectsize::effectsize(test)$Eta2 %>% janitor::round_half_up(3)
+    cat("$(F_{~Fisher}(",p[1],", ",p[2],") = ",s,",~p = ",v,",~eta{}^2 = ",ef,")$",
+        sep = "")
+})

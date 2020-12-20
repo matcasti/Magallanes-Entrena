@@ -1,14 +1,16 @@
 tab:regiones
 tab:sf36-table
 fig:sexo-vs-actfisc
+fig:sf36-plots
 tab:summary-sexo
+fig:sf36-plots2
 tab:summary-actfisc
 introducción
 metodos
 sujetos
 sf-36
 ipaq
-unidad-de-análisis
+análisis-estadístico
 resultados
 actividad-física
 salud-según-sf-36
