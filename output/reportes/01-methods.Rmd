@@ -20,7 +20,7 @@ tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región
 
 <p align="justify">El SF-36 Health Survey es una encuesta de salud diseñada por el Health Institute, New England Medical Center, de Boston Massachusetts, que a partir de 36 preguntas pretende medir ocho conceptos genéricos sobre la salud, esto es, conceptos que no son específicos de una patología, grupo de tratamiento o edad, detectando tanto estados positivos como negativos de la salud física y estado emocional.</p>
 
-<p align="justify">Los ocho conceptos de salud (dimensiones) determinados en este cuestionario se resumen en la tabla \@ref(tab:sf36-table)</p>
+<p align="justify">Los ocho conceptos de salud (dimensiones) determinados en este cuestionario se resumen en la tabla \@ref(tab:sf36-table).</p>
 
 ```{r sf36-table}
 sf36 <- data.frame(
@@ -59,11 +59,11 @@ xlab = "\nNivel de actividad física", legend.title = "Sexo", ggtheme = theme_pu
 
 ## Entrenamiento computarizado
 
-<p align="justify">El periodo de entrenamiento consistió en 4 clases computarizadas de acondicionamiento físico a la semana por un periodo de 12 semanas supervisado por un entrenador en cada clase, en el cual se realizaron ejercicios de musculación de intensidad moderada (i.e. OMNI-RES 5-6/10) en una estructura de entrenamiento tipo circuitos para inducir un aumento del gasto cardíaco en el ejercicio y la solicitación de sistemas energéticos aeróbicos y anaeróbicos lácticos.</p>
+<p align="justify">El periodo de entrenamiento consistió en 5 clases computarizadas de acondicionamiento físico a la semana por un periodo de 12 semanas supervisado por un entrenador en cada clase, en el cual se realizaron ejercicios de musculación de intensidad moderada (i.e. OMNI-RES 5-6/10) en una estructura de entrenamiento tipo circuitos para inducir un aumento del gasto cardíaco en el ejercicio y la solicitación de sistemas energéticos aeróbicos y anaeróbicos lácticos.</p>
 
 ## Talleres de nutrición
 
-<p align="justify">De forma complementaria se realizaron talleres de nutrición orientados a la adopción y mantenimiento de estilos de alimentación saludables junto con brindar estrategias nutricionales para favorecer su adherencia en combinación con programas de ejercicio físico. Éstas actividades fueron realizadas vía conferencia virtual al igual que los talleres de ejercicio.</p>
+<p align="justify">De forma complementaria se realizaron talleres de nutrición orientados a la adopción y mantenimiento de estilos de alimentación saludables junto con brindar estrategias nutricionales para favorecer su adherencia en combinación con programas de ejercicio físico. Éstas actividades fueron realizadas vía conferencia virtual al igual que los entrenamientos computarizados.</p>
 
 ## Análisis estadístico
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Matías Castillo" />
 
 
-<meta name="date" content="2020-12-20" />
+<meta name="date" content="2020-12-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,70 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -110,25 +174,27 @@ Reporte de resultados</a>
 <div id="actividad-física" class="section level2">
 <h2><span class="header-section-number">3.1</span> Actividad física</h2>
 <p align="justify">
-De la muestra evaluada perteneciente a la Región de Magallanes (n = 171), el 19.9% (n = 34) correspondió a hombres y el 80.1% (n = 137) a mujeres. La edad de los evaluados fue de 32 ± 9 años, sin diferencias entre hombres y mujeres <span class="math inline">\((t_{~Welch} (45.6) = 0.11,~p = 0.91, d_{~Cohen&#39;s} = 0.03)\)</span>.
+De la muestra evaluada perteneciente a la Región de Magallanes (n = 171), el 19.9% (n = 34) correspondió a hombres y el 80.1% (n = 137) a mujeres. La edad de los evaluados fue de 32 ± 9 años, sin diferencias entre hombres y mujeres (<span class="math inline">\(t_{~Welch}\)</span>(45.6) = 0.11, <span class="math inline">\(p\)</span> = 0.91, <span class="math inline">\(d_{~Cohen&#39;s}\)</span> = 0.03).
 </p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="resultados.html#cb1-1"></a>plot.sexo</span></code></pre></div>
 <div class="figure"><span id="fig:sf36-plots"></span>
-<img src="reportes_files/figure-html/sf36-plots-1.svg" alt="Parámetros del SF-36 ajustados por sexo." width="100%" />
+<img src="reportes_files/figure-html/sf36-plots-1.png" alt="Parámetros del SF-36 ajustados por sexo." width="100%" />
 <p class="caption">
 Figura 3.1: Parámetros del SF-36 ajustados por sexo.
 </p>
 </div>
 <p align="justify">
-En parámetros de actividad física, pudimos evaluar la distribución de los índices de los equivalentes metabólicos (MET’s) relacionados con el gasto energético y en consecuencia a la actividad física asociada, el cual fue obtenido de manera indirecta mediante el cuestionario IPAQ, en donde observamos una leve tendencia en los hombres a tener un mayor gasto energético total por semana (1,508 ± 2,162 MET’s/semana) en comparación con las mujeres (1,141 ± 1,374 MET’s/semana), sin embargo estas diferencias no fueron estadísticamente significativas <span class="math inline">\((t_{~Welch} (39.9) = 0.94, p = 0.352, d_{~Cohen&#39;s} = 0.3)\)</span>. En relación a la clasificación de actividad física, el 53% de los sujetos fueron catalogados con un nivel bajo de actividad física, un 25% con un nivel medio y un 22% con un nivel alto (Tabla <a href="resultados.html#tab:summary-sexo">3.1</a>), sumado a lo anterior se destaca que no hubo un patrón que indicara una asociación entre la clasificación de actividad física y el sexo <span class="math inline">\((\chi^2_{~Pearson}(2) = 1.38,~p = 0.502,~V_{~Cramer&#39;s} = 0.09)\)</span>.
+En parámetros de actividad física, pudimos evaluar la distribución de los índices de los equivalentes metabólicos (MET’s) relacionados con el gasto energético y en consecuencia a la actividad física asociada, el cual fue obtenido de manera indirecta mediante el cuestionario IPAQ, en donde observamos una leve tendencia en los hombres a tener un mayor gasto energético total por semana (1,508 ± 2,162 MET’s/semana) en comparación con las mujeres (1,141 ± 1,374 MET’s/semana), sin embargo estas diferencias no fueron estadísticamente significativas (<span class="math inline">\(t_{~Welch}\)</span> (39.9) = 0.94, <span class="math inline">\(p\)</span> = 0.352, <span class="math inline">\(d_{~Cohen&#39;s}\)</span> = 0.3). En relación a la clasificación de actividad física, el 53% de los sujetos fueron catalogados con un nivel bajo de actividad física, un 25% con un nivel medio y un 22% con un nivel alto (Tabla <a href="resultados.html#tab:summary-sexo">3.1</a>), sumado a lo anterior se destaca que no hubo un patrón que indicara una asociación entre la clasificación de actividad física y el sexo (<span class="math inline">\(\chi^2_{~Pearson}\)</span>(2) = 1.38, <span class="math inline">\(p\)</span> = 0.502, <span class="math inline">\(V_{~Cramer&#39;s}\)</span> = 0.09).
 </p>
 <caption>
 <span id="tab:summary-sexo">Tabla 3.1: </span> Valores por variable de estudio para los grupos de cada nivel de la categoría sexo de la submuestra correspondiente a la Región de Magallanes.
 </caption>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="resultados.html#cb2-1"></a>table1</span></code></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#longzxsjvz .gt_table {
+#avvslahdsg .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -153,7 +219,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-left-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_heading {
+#avvslahdsg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -165,7 +231,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-right-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_title {
+#avvslahdsg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -175,7 +241,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-bottom-width: 0;
 }
 
-#longzxsjvz .gt_subtitle {
+#avvslahdsg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -185,13 +251,13 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-top-width: 0;
 }
 
-#longzxsjvz .gt_bottom_border {
+#avvslahdsg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_col_headings {
+#avvslahdsg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -206,7 +272,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-right-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_col_heading {
+#avvslahdsg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -226,7 +292,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   overflow-x: hidden;
 }
 
-#longzxsjvz .gt_column_spanner_outer {
+#avvslahdsg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -238,15 +304,15 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   padding-right: 4px;
 }
 
-#longzxsjvz .gt_column_spanner_outer:first-child {
+#avvslahdsg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#longzxsjvz .gt_column_spanner_outer:last-child {
+#avvslahdsg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#longzxsjvz .gt_column_spanner {
+#avvslahdsg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -258,7 +324,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   width: 100%;
 }
 
-#longzxsjvz .gt_group_heading {
+#avvslahdsg .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -280,7 +346,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   vertical-align: middle;
 }
 
-#longzxsjvz .gt_empty_group_heading {
+#avvslahdsg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -295,15 +361,15 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   vertical-align: middle;
 }
 
-#longzxsjvz .gt_from_md > :first-child {
+#avvslahdsg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#longzxsjvz .gt_from_md > :last-child {
+#avvslahdsg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#longzxsjvz .gt_row {
+#avvslahdsg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -322,7 +388,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   overflow-x: hidden;
 }
 
-#longzxsjvz .gt_stub {
+#avvslahdsg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -334,7 +400,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   padding-left: 12px;
 }
 
-#longzxsjvz .gt_summary_row {
+#avvslahdsg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -344,7 +410,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   padding-right: 5px;
 }
 
-#longzxsjvz .gt_first_summary_row {
+#avvslahdsg .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -354,7 +420,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-top-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_grand_summary_row {
+#avvslahdsg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -364,7 +430,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   padding-right: 5px;
 }
 
-#longzxsjvz .gt_first_grand_summary_row {
+#avvslahdsg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,11 +440,11 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-top-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_striped {
+#avvslahdsg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#longzxsjvz .gt_table_body {
+#avvslahdsg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -387,7 +453,7 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-bottom-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_footnotes {
+#avvslahdsg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -401,13 +467,13 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-right-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_footnote {
+#avvslahdsg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#longzxsjvz .gt_sourcenotes {
+#avvslahdsg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -421,46 +487,46 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
   border-right-color: #D3D3D3;
 }
 
-#longzxsjvz .gt_sourcenote {
+#avvslahdsg .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#longzxsjvz .gt_left {
+#avvslahdsg .gt_left {
   text-align: left;
 }
 
-#longzxsjvz .gt_center {
+#avvslahdsg .gt_center {
   text-align: center;
 }
 
-#longzxsjvz .gt_right {
+#avvslahdsg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#longzxsjvz .gt_font_normal {
+#avvslahdsg .gt_font_normal {
   font-weight: normal;
 }
 
-#longzxsjvz .gt_font_bold {
+#avvslahdsg .gt_font_bold {
   font-weight: bold;
 }
 
-#longzxsjvz .gt_font_italic {
+#avvslahdsg .gt_font_italic {
   font-style: italic;
 }
 
-#longzxsjvz .gt_super {
+#avvslahdsg .gt_super {
   font-size: 65%;
 }
 
-#longzxsjvz .gt_footnote_marks {
+#avvslahdsg .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="longzxsjvz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="avvslahdsg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -653,25 +719,27 @@ En parámetros de actividad física, pudimos evaluar la distribución de los ín
 <div id="salud-según-sf-36" class="section level2">
 <h2><span class="header-section-number">3.2</span> Salud según SF-36</h2>
 <p align="justify">
-En relación a lo obtenido en el cuestionario SF-36, podemos destacar el componente de dolor corporal, el cual representa una “<em>Medida de la intensidad del dolor padecido y su efecto en el trabajo habitual y en las actividades del hogar</em>” en el que las mujeres tuvieron una puntuación significativamente mayor en comparación a los hombres <span class="math inline">\((t_{~Welch} (62) = -3.31,~p = 0.002,~ d_{~Cohen&#39;s} = -0.84)\)</span>, sin embargo al ajustar por el nivel de actividad física no encontramos diferencias estadísticamente significativas entre los niveles de esta categoría <span class="math inline">\((F_{~Fisher}(2, 168) = 0.39,~p = 0.676,~\eta{}^2 = 0.005)\)</span>. En relación a la función social, evaluada dentro del SF-36, las mujeres puntuaron (38 ± 24) más que los hombres (22 ± 20), <span class="math inline">\(t_{~Welch} (58.2) = -3.92,~p &lt; 0.001,~d_{~Cohen&#39;s} = -1.03\)</span>, pero al igual que con el parámetro de dolor físico, al ajustar la función social según la condición física de los participantes no encontramos diferencias significativas entre los participantes <span class="math inline">\((F_{~Fisher}(2, 168) = 0.05,~p = 0.948,~\eta{}^2 = 0.001)\)</span>.
+En relación a lo obtenido en el cuestionario SF-36, podemos destacar el componente de dolor corporal, el cual representa una “<em>Medida de la intensidad del dolor padecido y su efecto en el trabajo habitual y en las actividades del hogar</em>” en el que las mujeres tuvieron una puntuación significativamente mayor en comparación a los hombres (<span class="math inline">\(t_{~Welch}\)</span>(62) = -3.31, <span class="math inline">\(p\)</span> = 0.002, <span class="math inline">\(d_{~Cohen&#39;s}\)</span> = -0.84), sin embargo al ajustar por el nivel de actividad física no encontramos diferencias estadísticamente significativas entre los niveles de esta categoría (<span class="math inline">\(F_{~Fisher}\)</span>(2, 168) = 0.39, <span class="math inline">\(p\)</span> = 0.676, <span class="math inline">\(\eta{}^2\)</span> = 0.005). En relación a la función social, evaluada dentro del SF-36, las mujeres puntuaron (38 ± 24) más que los hombres (22 ± 20), <span class="math inline">\(t_{~Welch}\)</span>(58.2) = -3.92, <span class="math inline">\(p\)</span> &lt; 0.001, <span class="math inline">\(d_{~Cohen&#39;s}\)</span> = -1.03, pero al igual que con el parámetro de dolor físico, al ajustar la función social según la condición física de los participantes no encontramos diferencias significativas entre los participantes (<span class="math inline">\(F_{~Fisher}\)</span>(2, 168) = 0.05, <span class="math inline">\(p\)</span> = 0.948, <span class="math inline">\(\eta{}^2\)</span> = 0.001).
 </p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="resultados.html#cb3-1"></a>plot.acfisica</span></code></pre></div>
 <div class="figure"><span id="fig:sf36-plots2"></span>
-<img src="reportes_files/figure-html/sf36-plots2-1.svg" alt="Parámetros del SF-36 ajustados por nivel de actividad física." width="100%" />
+<img src="reportes_files/figure-html/sf36-plots2-1.png" alt="Parámetros del SF-36 ajustados por nivel de actividad física." width="100%" />
 <p class="caption">
 Figura 3.2: Parámetros del SF-36 ajustados por nivel de actividad física.
 </p>
 </div>
 <p align="justify">
-Respecto al parámetro de salud general, el cual se define como “<em>Valoración personal del estado de salud, que incluye la situación actual y las perspectivas futuras y la resistencia a enfermar</em>”, los datos muestran que en promedio, los hombres (49 ± 11) puntúan mejor que las mujeres (44 ± 14), <span class="math inline">\(t_{~Welch} (60.8) = 2.39,~p = 0.02,~d_{~Cohen&#39;s} = 0.61\)</span>. Los detalles en relación a los grupos se muestran en la Tabla <a href="resultados.html#tab:summary-sexo">3.1</a> y <a href="resultados.html#tab:summary-actfisc">3.2</a>.
+Respecto al parámetro de salud general, el cual se define como “<em>Valoración personal del estado de salud, que incluye la situación actual y las perspectivas futuras y la resistencia a enfermar</em>”, los datos muestran que en promedio, los hombres (49 ± 11) puntúan mejor que las mujeres (44 ± 14), <span class="math inline">\(t_{~Welch}\)</span> (60.8) = 2.39, <span class="math inline">\(p\)</span> = 0.02, <span class="math inline">\(d_{~Cohen&#39;s}\)</span> = 0.61. Los detalles en relación a los grupos se muestran en la Tabla <a href="resultados.html#tab:summary-sexo">3.1</a> y <a href="resultados.html#tab:summary-actfisc">3.2</a>.
 </p>
 <caption>
 <span id="tab:summary-actfisc">Tabla 3.2: </span> Valores por variable de estudio para los grupos de cada nivel de la categoría actividad física de la submuestra correspondiente a la Región de Magallanes.
 </caption>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="resultados.html#cb4-1"></a>table2</span></code></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yhqquygdhp .gt_table {
+#yrgufbsydx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -696,7 +764,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-left-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_heading {
+#yrgufbsydx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -708,7 +776,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-right-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_title {
+#yrgufbsydx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -718,7 +786,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-bottom-width: 0;
 }
 
-#yhqquygdhp .gt_subtitle {
+#yrgufbsydx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -728,13 +796,13 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-top-width: 0;
 }
 
-#yhqquygdhp .gt_bottom_border {
+#yrgufbsydx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_col_headings {
+#yrgufbsydx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -749,7 +817,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-right-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_col_heading {
+#yrgufbsydx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -769,7 +837,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   overflow-x: hidden;
 }
 
-#yhqquygdhp .gt_column_spanner_outer {
+#yrgufbsydx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -781,15 +849,15 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   padding-right: 4px;
 }
 
-#yhqquygdhp .gt_column_spanner_outer:first-child {
+#yrgufbsydx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yhqquygdhp .gt_column_spanner_outer:last-child {
+#yrgufbsydx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yhqquygdhp .gt_column_spanner {
+#yrgufbsydx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -801,7 +869,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   width: 100%;
 }
 
-#yhqquygdhp .gt_group_heading {
+#yrgufbsydx .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -823,7 +891,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   vertical-align: middle;
 }
 
-#yhqquygdhp .gt_empty_group_heading {
+#yrgufbsydx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -838,15 +906,15 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   vertical-align: middle;
 }
 
-#yhqquygdhp .gt_from_md > :first-child {
+#yrgufbsydx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yhqquygdhp .gt_from_md > :last-child {
+#yrgufbsydx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yhqquygdhp .gt_row {
+#yrgufbsydx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -865,7 +933,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   overflow-x: hidden;
 }
 
-#yhqquygdhp .gt_stub {
+#yrgufbsydx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -877,7 +945,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   padding-left: 12px;
 }
 
-#yhqquygdhp .gt_summary_row {
+#yrgufbsydx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -887,7 +955,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   padding-right: 5px;
 }
 
-#yhqquygdhp .gt_first_summary_row {
+#yrgufbsydx .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -897,7 +965,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-top-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_grand_summary_row {
+#yrgufbsydx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -907,7 +975,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   padding-right: 5px;
 }
 
-#yhqquygdhp .gt_first_grand_summary_row {
+#yrgufbsydx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -917,11 +985,11 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-top-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_striped {
+#yrgufbsydx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yhqquygdhp .gt_table_body {
+#yrgufbsydx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -930,7 +998,7 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-bottom-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_footnotes {
+#yrgufbsydx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -944,13 +1012,13 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-right-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_footnote {
+#yrgufbsydx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#yhqquygdhp .gt_sourcenotes {
+#yrgufbsydx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -964,46 +1032,46 @@ Respecto al parámetro de salud general, el cual se define como “<em>Valoraci�
   border-right-color: #D3D3D3;
 }
 
-#yhqquygdhp .gt_sourcenote {
+#yrgufbsydx .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#yhqquygdhp .gt_left {
+#yrgufbsydx .gt_left {
   text-align: left;
 }
 
-#yhqquygdhp .gt_center {
+#yrgufbsydx .gt_center {
   text-align: center;
 }
 
-#yhqquygdhp .gt_right {
+#yrgufbsydx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yhqquygdhp .gt_font_normal {
+#yrgufbsydx .gt_font_normal {
   font-weight: normal;
 }
 
-#yhqquygdhp .gt_font_bold {
+#yrgufbsydx .gt_font_bold {
   font-weight: bold;
 }
 
-#yhqquygdhp .gt_font_italic {
+#yrgufbsydx .gt_font_italic {
   font-style: italic;
 }
 
-#yhqquygdhp .gt_super {
+#yrgufbsydx .gt_super {
   font-size: 65%;
 }
 
-#yhqquygdhp .gt_footnote_marks {
+#yrgufbsydx .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="yhqquygdhp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="yrgufbsydx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
