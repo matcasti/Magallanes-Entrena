@@ -30,3 +30,17 @@ with(data, {
     cat("$(F_{~Fisher}(",p[1],", ",p[2],") = ",s,",~p = ",v,",~eta{}^2 = ",ef,")$",
         sep = "")
 })
+
+report <- function(expr) {
+  # in plotmath, paste acts like paste0
+  paste <- paste0
+
+  # italic text just has stars around it
+  italic <- function(s) paste0("*", s, "*")
+
+  # single subscripts are entered using subsetting
+  `[` <- function(main, subscript) paste0(main, "~", subscript, "~")
+
+  # evaluate the expression to produce a string
+  eval(expr)
+}

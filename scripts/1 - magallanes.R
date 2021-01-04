@@ -34,6 +34,43 @@
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# 0. Funciones auxiliares -------------------------------------------------
+
+testing <- function(data, variable, by, ...) {
+  
+  hyp_testing <- function(data, variable, by, ...) {
+    result <- list()
+    test <- if(all(aggregate(data[[variable]], list(data[[by]] ), 
+                  function(x) stats::shapiro.test(x)$p.value)$x > 0.05))
+      { if(car::leveneTest(data[[variable]], data[[by]])[1,3] > 0.05)
+          { test <- t.test(data[[variable]] ~ data[[by]], var.equal = TRUE)
+            test$method <- "Prueba t de Student"; test } else
+          { test <- t.test(data[[variable]] ~ data[[by]], var.equal = FALSE)
+            test$method <- "Prueba t de Student"; test } } else
+            { test <- wilcox.test(data[[variable]] ~ data[[by]], correct = F, exact = F, paired = F)
+              test$method <- "Prueba de suma de rangos de Wilcoxon"; test }
+    result$p <- test$p.value; result$test <- test$method
+    result}
+  
+  hyp_mult_testing <- function(data, variable, by, ...) {
+    result <- list()
+    test <- if(all(aggregate(data[[variable]], list(data[[by]] ), 
+                  function(x) stats::shapiro.test(x)$p.value)$x > 0.05))
+      { if(car::leveneTest(data[[variable]], data[[by]])[1,3] > 0.05)
+          { test <- oneway.test(data[[variable]] ~ data[[by]], var.equal = TRUE)
+            test$method <- "ANOVA de un factor"; test } else
+          { test <- oneway.test(data[[variable]] ~ data[[by]], var.equal = FALSE)
+            test$method <- "ANOVA de un factor"; test } } else
+            { test <- kruskal.test(data[[variable]] ~ data[[by]])
+              test$method <- "Prueba de Kruskall-Wallis"; test }
+    result$p <- test$p.value; result$test <- test$method
+    result}
+  
+  if(length(unique(data[[by]]) ) == 2 ) 
+    { hyp_testing(data, variable, by) } else
+    { hyp_mult_testing(data, variable, by) }
+}
+
 # 1. Análisis descriptivos ------------------------------------------------
 
 library(data.table);library(tidyverse)
@@ -71,10 +108,8 @@ table1 <- tbl_summary(data, missing = "no", by = sexo,
                         sf.rol_emocional ~ "continuous",
                         sf.rol_fisico ~ "continuous")) %>% 
     add_p(pvalue_fun = function(x) {style_pvalue(x, digits = 3)},
-          test = list(all_continuous() ~ "t.test")) %>% 
+          test = list(all_continuous() ~ "testing")) %>% 
     add_overall() %>% 
-    modify_footnote(list(p.value ~ "Prueba t-Student; Prueba de asociación chi-cuadrado",
-                        paste("stat_",0:2,sep = "") ~ "Media ± Desviación estándar")) %>% 
     modify_header(list(label ~ "**Variables**",
                      stat_0 ~ "**Total**", 
                      p.value ~ "**P-valor**")) %>%
@@ -108,20 +143,18 @@ table2 <- tbl_summary(data, missing = "no", by = actividad_fisica,
                         sf.rol_emocional ~ "continuous",
                         sf.rol_fisico ~ "continuous")) %>% 
   add_p(pvalue_fun = function(x) {style_pvalue(x, digits = 3)},
-        test = list(all_continuous() ~ "aov")) %>% 
-  modify_footnote(list(p.value ~ "Análisis de varianza (ANOVA) de una vía; Prueba de asociación chi-cuadrado",
-                       paste("stat_",1:3,sep = "") ~ "Media ± Desviación estándar")) %>% 
+        test = list(all_continuous() ~ "testing")) %>% 
   modify_header(list(label ~ "**Variables**", p.value ~ "**P-valor**")) %>%
   modify_spanning_header(list(paste("stat_",1:3,sep = "") ~ "**Actividad física**")) %>% 
   bold_labels() %>% bold_p() 
 
 # 2. Diferencias de grupos ------------------------------------------------
 
-library(ggstatsplot)
 plot1 <- ggplot(data, aes(x = sexo, y = sf.dolor_corporal, fill = sexo)) +
   labs(x = "", y = "Dolor físico\n") +
   stat_summary(geom = "bar", fun = "mean", alpha = 0.75) +
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
+  ggpubr::stat_compare_means(label.y = 40, label.x = 0.75) +
   theme_pubr()
 plot1 <- set_palette(plot1, "grey") + theme(legend.position = "none")
 
@@ -129,6 +162,7 @@ plot2 <- ggplot(data, aes(x = sexo, y = sf.funcion_social, fill = sexo)) +
   labs(x = "", y = "Función social\n") +
   stat_summary(geom = "bar", fun = "mean", alpha = 0.75) +
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
+  ggpubr::stat_compare_means(label.y = 45, label.x = 0.75) +
   theme_pubr()
 plot2 <- set_palette(plot2, "grey") + theme(legend.position = "none")
 
@@ -136,6 +170,7 @@ plot3 <- ggplot(data, aes(x = sexo, y = sf.salud_general, fill = sexo)) +
   labs(x = "", y = "Salud general\n") +
   stat_summary(geom = "bar", fun = "mean", alpha = 0.75) +
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
+  ggpubr::stat_compare_means(label.y = 60, label.x = 0.75) +
   theme_pubr()
 plot3 <- set_palette(plot3, "grey") + theme(legend.position = "none")
 
@@ -143,6 +178,7 @@ plot4 <- ggplot(data, aes(x = sexo, y = sf.score, fill = sexo)) +
   labs(x = "", y = "Promedio SF-36 por área\n") +
   stat_summary(geom = "bar", fun = "mean", alpha = 0.75) +
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
+  ggpubr::stat_compare_means(label.y = 60, label.x = 0.75) +
   theme_pubr()
 plot4 <- set_palette(plot4, "grey") + theme(legend.position = "none")
 
@@ -160,9 +196,9 @@ plot5 <- ggplot(data, aes(x = actividad_fisica, y = met_total,
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
   ggsignif::geom_signif(comparisons = list(
     c("Bajo","Moderado"),c("Moderado","Alto"),c("Bajo","Alto")),
-    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/16, 
+    test = "wilcox.test", test.args = list(var.equal = TRUE), step_increase = 1/20, 
     map_signif_level = function(p)sprintf("p = %.2g", p), 
-    margin_top = -1/2) +
+    margin_top = -1/1.75) +
   theme_pubr()
 plot5 <- set_palette(plot5, "grey") + theme(legend.position = "none")
 
@@ -173,9 +209,9 @@ plot6 <- ggplot(data, aes(x = actividad_fisica, y = sf.salud_general,
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
   ggsignif::geom_signif(comparisons = list(
     c("Bajo","Moderado"),c("Moderado","Alto"),c("Bajo","Alto")),
-    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/12, 
+    test = "wilcox.test", test.args = list(var.equal = TRUE), step_increase = 1/18, 
     map_signif_level = function(p)sprintf("p = %.2g", p), 
-    margin_top = -1/3) +
+    margin_top = -1/2.5) +
   theme_pubr()
 plot6 <- set_palette(plot6, "grey") + theme(legend.position = "none")
 
@@ -186,9 +222,9 @@ plot7 <- ggplot(data, aes(x = actividad_fisica, y = sf.rol_emocional,
   stat_summary(geom = "errorbar", fun.data = "mean_ci", width = 0.3) +
   ggsignif::geom_signif(comparisons = list(
     c("Bajo","Moderado"),c("Moderado","Alto"),c("Bajo","Alto")),
-    test = "t.test", test.args = list(var.equal = TRUE), step_increase = 1/10, 
+    test = "wilcox.test", test.args = list(var.equal = TRUE), step_increase = 1/14, 
     map_signif_level = function(p)sprintf("p = %.2g", p), 
-    margin_top = 1/10) +
+    margin_top = 0) +
   theme_pubr()
 plot7 <- set_palette(plot7, "grey") + theme(legend.position = "none")
 
