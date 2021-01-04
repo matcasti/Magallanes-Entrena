@@ -12,7 +12,7 @@ load("~/Documents/R/WD/Magallanes-Entrena/output/output.RData")
 <p align="justify">De los sujetos evaluados (n = `r nrow(muestra)`), el `r round(nrow(magallanes)/nrow(muestra)*100)`% de quienes respondieron las encuestas fueron de la Región de Magallanes. Del total de la muestra, la proporción de cada región puede apreciarse en la Tabla \@ref(tab:regiones).</p>
 
 <caption>(\#tab:regiones) Proporción de personas por sexo en cada región.</caption>  
-```{r regiones}
+```{r regiones, echo = FALSE}
 tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región", sexo ~ "Sexo"))
 ```
 
@@ -22,7 +22,7 @@ tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región
 
 <p align="justify">Los ocho conceptos de salud (dimensiones) determinados en este cuestionario se resumen en la tabla \@ref(tab:sf36-table).</p>
 
-```{r sf36-table}
+```{r sf36-table, echo = FALSE}
 sf36 <- data.frame(
   Dimensión = c("Función física",
                 "Rol físico",
@@ -52,7 +52,7 @@ knitr::kable(x = sf36, caption = "Dominios evaluativos en el cuestionario SF-36.
 
 <p align="justify">Los parámetros de asociación entre categorías de actividad física y sexo no muestran una relación entre si, sin embargo, la proporción de mujeres es significativamente mayor en cada categoría de actividad física, lo que  puede ser evidenciado en la Figura \@ref(fig:sexo-vs-actfisc).</p>
 
-```{r sexo-vs-actfisc, fig.cap="Proporción de hombres y mujeres en cada nivel de actividad física en toda la muestra", fig.align='center',out.width="100%"}
+```{r sexo-vs-actfisc, fig.cap="Proporción de hombres y mujeres en cada nivel de actividad física en toda la muestra", fig.align='center',out.width="100%", echo = FALSE}
 ggstatsplot::ggbarstats(data, sexo, actividad_fisica, bf.message = FALSE, sample.size.label = TRUE, results.subtitle = FALSE,
 xlab = "\nNivel de actividad física", legend.title = "Sexo", ggtheme = theme_pubr())
 ```
