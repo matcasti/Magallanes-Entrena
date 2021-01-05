@@ -14,9 +14,9 @@ plot.sexo
 
 <p align="justify">En parámetros de actividad física, pudimos evaluar la distribución de los índices de los equivalentes metabólicos (MET's) relacionados con el gasto energético y en consecuencia a la actividad física asociada, el cual fue obtenido de manera indirecta mediante el cuestionario IPAQ, en donde observamos una leve tendencia en los hombres a tener un mayor gasto energético total por semana (1,508 ± 2,162 MET's/semana) en comparación con las mujeres (1,141 ± 1,374 MET's/semana), sin embargo estas diferencias no fueron estadísticamente significativas ($log_e({W}_{Mann-Whitney})$ = 7.80, $p$ = 0.657, $\widehat{r}$ = 0.03). En relación a la clasificación de actividad física, el 53% de los sujetos fueron catalogados con un nivel bajo de actividad física, un 25% con un nivel medio y un 22% con un nivel alto (Tabla \@ref(tab:summary-sexo)), sumado a lo anterior se destaca que no hubo un patrón que indicara una asociación entre la clasificación de actividad física y el sexo ($\chi^2_{~Pearson}$(2) = 1.38, $p$ = 0.502, $V_{~Cramer's}$ = 0.09).</p>
 
-<caption>(\#tab:summary-sexo) Valores por variable de estudio para los grupos de cada nivel de la categoría sexo de la submuestra correspondiente a la Región de Magallanes.</caption>  
+<caption>Tabla 3.1. (\#tab:summary-sexo) Valores por variable de estudio para los grupos de cada nivel de la categoría sexo de la submuestra correspondiente a la Región de Magallanes.</caption>  
 ```{r, echo = FALSE}
-table1
+if (knitr::is_html_output()) {table1} else {table1 %>% as_gt() %>% gt::as_latex()}
 ```
 
 ## Salud según SF-36
@@ -29,8 +29,8 @@ plot.acfisica
 
 <p align="justify"> Respecto al parámetro de salud general, el cual se define como "*Valoración personal del estado de salud, que incluye la situación actual y las perspectivas futuras y la resistencia a enfermar*", los datos muestran que en promedio, los hombres (49 ± 11) puntúan mejor que las mujeres (44 ± 14), $log_e({W}_{Mann-Whitney})$ = 7.96, $p$ = 0.042, $\widehat{r}$ = 0.16, sin embargo, y al ajustar por parámetros de actividad física no se hallaron diferencias significativas en los rangos medios de los grupos de actividad física ($\chi_{~Kruskall-Wallis}^2$(2) = 3.85, $p$ = 0.146, $\epsilon^2$ = 0.02). Los detalles en relación a los grupos se muestran en la Tabla \@ref(tab:summary-sexo) y \@ref(tab:summary-actfisc).</p> 
 
-<caption>(\#tab:summary-actfisc) Valores por variable de estudio para los grupos de cada nivel de la categoría actividad física de la submuestra correspondiente a la Región de Magallanes.</caption>
+<caption>Tabla 3.2. (\#tab:summary-actfisc) Valores por variable de estudio para los grupos de cada nivel de la categoría actividad física de la submuestra correspondiente a la Región de Magallanes.</caption>
 ```{r, echo = FALSE}
-table2
+if (knitr::is_html_output()) {table2} else {table2 %>% as_gt() %>% gt::as_latex()}
 ```
 

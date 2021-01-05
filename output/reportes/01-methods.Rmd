@@ -11,9 +11,13 @@ load("~/Documents/R/WD/Magallanes-Entrena/output/output.RData")
 
 <p align="justify">De los sujetos evaluados (n = `r nrow(muestra)`), el `r round(nrow(magallanes)/nrow(muestra)*100)`% de quienes respondieron las encuestas fueron de la Región de Magallanes. Del total de la muestra, la proporción de cada región puede apreciarse en la Tabla \@ref(tab:regiones).</p>
 
-<caption>(\#tab:regiones) Proporción de personas por sexo en cada región.</caption>  
+<caption>Tabla 2.1. (\#tab:regiones) Proporción de personas por sexo en cada región.</caption>  
 ```{r regiones, echo = FALSE}
-tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región", sexo ~ "Sexo"))
+
+theme_gtsummary_language(language = "es")
+
+tablemethod <- tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región", sexo ~ "Sexo"))
+if (knitr::is_html_output()) {tablemethod} else {tablemethod %>% as_gt() %>% gt::as_latex()}
 ```
 
 ## SF-36
@@ -22,27 +26,16 @@ tbl_cross(data, region, sexo, statistic = "{p}%", label = list(region ~ "Región
 
 <p align="justify">Los ocho conceptos de salud (dimensiones) determinados en este cuestionario se resumen en la tabla \@ref(tab:sf36-table).</p>
 
+<caption>Tabla 2.2. (\#tab:sf36-table) Dominios evaluativos en el cuestionario SF-36.</caption>  
 ```{r sf36-table, echo = FALSE}
-sf36 <- data.frame(
-  Dimensión = c("Función física",
-                "Rol físico",
-                "Dolor corporal",
-                "Salud general",
-                "Vitalidad",
-                "Función social",
-                "Rol emocional",
-                "Salud mental"),
-  Significado = c("Grado en el que la falta de salud limita las actividades físicas de la vida diaria, como el cuidado personal, caminar, subir escaleras, coger o transportar cargas, y realizar esfuerzos moderados e intensos.",
-                  "Grado en el que la falta de salud interfiere en el trabajo y otras actividades diarias, produciendo como consecuencia un rendimiento menor del deseado, o limitando el tipo de actividades que se puede realizar o la dificultad de las mismas.",
-                  "Medida de la intensidad del dolor padecido y su efecto en el trabajo habitual y en las actividades del hogar.",
-                  "Valoración personal del estado de salud, que incluye la situación actual y las perspectivas futuras y la resistencia a enfermar.",
-                  "Sentimiento de energía y vitalidad, frente al de cansancio y desánimo.",
-                  "Grado en el que los problemas físicos o emocionales derivados de la falta de salud interfieren en la vida social habitual.",
-                  "Grado en el que los problemas emocionales afectan al trabajo y otras actividades diarias, considerando la reducción del tiempo dedicado, disminución del rendimiento y del esmero en el trabajo",
-                  "Valoración de la salud mental general, considerando la depresión, ansiedad, autocontrol, y bienestar general.")
-)
+sf36 <- data.frame(Dimensión = c("Función física","Rol físico","Dolor corporal","Salud general","Vitalidad","Función social","Rol emocional","Salud mental"), Significado = c("Grado en el que la falta de salud limita las actividadesfísicas de la vida diaria, como el cuidado personal, caminar, subir escaleras, coger o transportar cargas, y realizar esfuerzos moderados e intensos.","Grado en el que la falta de salud interfiere en el trabajo y otras actividades diarias, produciendo como consecuencia un rendimiento menor del deseado, o limitando el tipo de actividades que se puede realizar o la dificultad de las mismas.","Medida de la intensidad del dolor padecido y su efecto en el trabajo habitual y en las actividades del hogar.","Valoración personal del estado de salud, que incluye la situación actual y las perspectivas futuras y la resistencia a enfermar.","Sentimiento de energía y vitalidad, frente al de cansancio y desánimo.","Grado en el que los problemas físicos o emocionales derivados de la falta de salud interfieren en la vida social habitual.","Grado en el que los problemas emocionales afectan al trabajo y otras actividades diarias, considerando la reducción del tiempo dedicado, disminución del rendimiento y del esmero en el trabajo","Valoración de la salud mental general, considerando la depresión, ansiedad, autocontrol, y bienestar general."))
 
-knitr::kable(x = sf36, caption = "Dominios evaluativos en el cuestionario SF-36.", booktabs = TRUE)
+if (knitr::is_html_output()) { 
+  knitr::kable(x = sf36, booktabs = TRUE) } else 
+  { sf36 %>% kableExtra::kbl(booktabs = TRUE) %>%
+    kableExtra::column_spec(2, width = "12cm") %>% 
+    kableExtra::column_spec(1, latex_valign = "m") %>% 
+    kableExtra::row_spec(0,bold = T, align = "c") }
 
 ```
 

@@ -2,6 +2,10 @@ bookdown::gitbook:
   css: style.css
   split_bib: no
   config:
+    toolbar:
+      position: fixed
+      download: "docs/reportes.pdf"
+      search: yes
     toc:
       before: |
         <li><a>Magallanes entrena</a></li>
